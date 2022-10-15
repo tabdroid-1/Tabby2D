@@ -150,15 +150,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Src\GameObject.cpp" />
-    <ClCompile Include="Src\Game.cpp" />
+    <ClCompile Include="Src\include\Map.cpp" />
+    <ClCompile Include="Src\include\GameObject.cpp" />
+    <ClCompile Include="Src\include\Game.cpp" />
     <ClCompile Include="Src\main.cpp" />
-    <ClCompile Include="Src\TextureManager.cpp" />
+    <ClCompile Include="Src\include\TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Src\GameObject.h" />
-    <ClInclude Include="Src\Game.h" />
-    <ClInclude Include="Src\TextureManager.h" />
+    <ClInclude Include="Src\include\Components.h" />
+    <ClInclude Include="Src\include\ECS.h" />
+    <ClInclude Include="Src\include\Map.h" />
+    <ClInclude Include="Src\include\GameObject.h" />
+    <ClInclude Include="Src\include\Game.h" />
+    <ClInclude Include="Src\include\TextureManager.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="libpng16-16.dll" />
@@ -167,7 +171,10 @@
     <None Include="zlib1.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="assets\dirt.png" />
+    <Image Include="assets\grass.png" />
     <Image Include="assets\player.png" />
+    <Image Include="assets\water.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
