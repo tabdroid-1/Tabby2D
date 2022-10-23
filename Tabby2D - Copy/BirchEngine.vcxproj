@@ -150,6 +150,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Src\include\Vector2.cpp" />
+    <ClCompile Include="Src\include\Vector2.h" />
     <ClCompile Include="Src\include\Map.cpp" />
     <ClCompile Include="Src\include\GameObject.cpp" />
     <ClCompile Include="Src\include\Game.cpp" />
@@ -157,8 +159,11 @@
     <ClCompile Include="Src\include\TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Src\include\Components.h" />
-    <ClInclude Include="Src\include\ECS.h" />
+    <ClInclude Include="Src\include\ECS\Components.h" />
+    <ClInclude Include="Src\include\ECS\ECS.h" />
+    <ClInclude Include="Src\include\KeyListener.h" />
+    <ClInclude Include="Src\include\ECS\Transform.h" />
+    <ClInclude Include="Src\include\ECS\Sprite.h" />
     <ClInclude Include="Src\include\Map.h" />
     <ClInclude Include="Src\include\GameObject.h" />
     <ClInclude Include="Src\include\Game.h" />
@@ -175,6 +180,7 @@
     <Image Include="assets\grass.png" />
     <Image Include="assets\player.png" />
     <Image Include="assets\water.png" />
+    <Image Include="assets\wierderguy.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

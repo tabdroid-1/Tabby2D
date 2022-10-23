@@ -46,29 +46,17 @@ public:
 
 	void update() {
 
-		for (auto& c : components) {
-			c->update();
-		}
-
-		// in video
-		/*for (auto& c : components) {
-			c->update();
-		}
-
-		for (auto& c : components) {
-			c->draw();
-		}*/
+		for (auto& c : components) { c->update(); }
 	}
 
 	void draw() {
-		for (auto& c : components) {
-			c->draw();
-		}
+		for (auto& c : components) { c->draw(); }
 	}
-	bool isActive() { return active; }
+
+	bool isActive() const { return active; }
 	void destroy() { active = false; }
 
-	template <typename T> bool hasComponent() {
+	template <typename T> bool hasComponent() const {
 		return componentBitSet[getComponentID<T>];
 	}
 
@@ -77,7 +65,7 @@ public:
 
 		T* c(new T(std::forward<TArgs>(mArgs)...));
 		c->entity = this;
-		std::unique_ptr<Component> uPtr { c };
+		std::unique_ptr<Component> uPtr{ c };
 		components.emplace_back(std::move(uPtr));
 
 		componentArray[getComponentTypeID<T>()] = c;
@@ -123,6 +111,7 @@ public:
 	}
 
 	Entity& addEntity() {
+
 		Entity* e = new Entity;
 		std::unique_ptr<Entity> uPtr{ e };
 		entities.emplace_back(std::move(uPtr));

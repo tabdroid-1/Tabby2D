@@ -30,6 +30,12 @@
     <ClCompile Include="Src\include\Map.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Src\include\Vector2.h">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\include\Vector2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\include\Game.h">
@@ -44,10 +50,19 @@
     <ClInclude Include="Src\include\Map.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Src\include\ECS.h">
+    <ClInclude Include="Src\include\ECS\ECS.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Src\include\Components.h">
+    <ClInclude Include="Src\include\ECS\Components.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\include\ECS\Sprite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\include\ECS\Transform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\include\KeyListener.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -68,6 +83,9 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="assets\water.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\wierderguy.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
