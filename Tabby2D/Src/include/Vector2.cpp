@@ -1,6 +1,6 @@
 #include "Vector2.h"
 
-Vector2::Vector2() {
+Vector2::Vector2() {   // ex.: Vector()
 
 	x = 0.0f;
 	y = 0.0f;
@@ -12,28 +12,28 @@ Vector2::Vector2(float x, float y) {
 	this->y = y;
 }
 
-Vector2& Vector2::Add(const Vector2& vec) {
+Vector2& Vector2::Add(const Vector2& vec) {  
 
 	this->x += vec.x;
 	this->y += vec.y;
 	return *this;
 }
 
-Vector2& Vector2::Subtract(const Vector2& vec) {
+Vector2& Vector2::Subtract(const Vector2& vec) { 
 
 	this->x -= vec.x;
 	this->y -= vec.y;
 	return *this;
 }
 
-Vector2& Vector2::Multiply(const Vector2& vec) {
+Vector2& Vector2::Multiply(const Vector2& vec) { 
 
 	this->x *= vec.x;
 	this->y *= vec.y;
 	return *this;
 }
 
-Vector2& Vector2::Divide(const Vector2 & vec) {
+Vector2& Vector2::Divide(const Vector2 & vec) {  
 
 	this->x /= vec.x;
 	this->y /= vec.y;
@@ -41,7 +41,7 @@ Vector2& Vector2::Divide(const Vector2 & vec) {
 }
 
 
-Vector2& operator+(Vector2& v1, const Vector2& v2) {
+Vector2& operator+(Vector2& v1, const Vector2& v2) {  
 	return v1.Add(v2);
 }
 
@@ -74,6 +74,22 @@ Vector2& Vector2::operator*=(const Vector2& vec) {
 
 Vector2& Vector2::operator/=(const Vector2& vec) {
 	return this->Divide(vec);
+}
+
+Vector2& Vector2::operator*(const int& i) {
+
+	this->x *= i;
+	this->y *= i;
+
+	return *this;
+}
+
+Vector2& Vector2::Zero() {
+
+	this->x = 0;
+	this->y = 0;
+
+	return *this;
 }
 
 

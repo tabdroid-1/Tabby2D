@@ -123,14 +123,14 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>C:\Dev\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Dev\SDL2_image-2.0.1\include;C:\Dev\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>C:\Dev\BirchEngine\SDL2\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Dev\SDL2_image-2.0.1\lib\x86;C:\Dev\BirchEngine\SDL2\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -150,6 +150,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Src\include\Collision.cpp" />
+    <ClCompile Include="Src\include\ECS\ECS.cpp" />
     <ClCompile Include="Src\include\Vector2.cpp" />
     <ClCompile Include="Src\include\Vector2.h" />
     <ClCompile Include="Src\include\Map.cpp" />
@@ -159,31 +161,35 @@
     <ClCompile Include="Src\include\TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Src\include\Collision.h" />
+    <ClInclude Include="Src\include\ECS\Collider.h" />
     <ClInclude Include="Src\include\ECS\Components.h" />
     <ClInclude Include="Src\include\ECS\ECS.h" />
-    <ClInclude Include="Src\include\ECS\KeyListenerComp.h" />
+    <ClInclude Include="Src\include\ECS\KeyListener.h" />
     <ClInclude Include="Src\include\ECS\RigidBody.h" />
-    <ClInclude Include="Src\include\KeyListener.h" />
+    <ClInclude Include="Src\include\ECS\Tile.h" />
     <ClInclude Include="Src\include\ECS\Transform.h" />
     <ClInclude Include="Src\include\ECS\Sprite.h" />
     <ClInclude Include="Src\include\Map.h" />
     <ClInclude Include="Src\include\GameObject.h" />
     <ClInclude Include="Src\include\Game.h" />
     <ClInclude Include="Src\include\TextureManager.h" />
-    <ClInclude Include="Src\include\Input.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="assets\levels\levelTest.level" />
     <None Include="libpng16-16.dll" />
     <None Include="SDL2.dll" />
     <None Include="SDL2_image.dll" />
     <None Include="zlib1.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="assets\dirt.png" />
-    <Image Include="assets\grass.png" />
-    <Image Include="assets\player.png" />
-    <Image Include="assets\water.png" />
-    <Image Include="assets\wierderguy.png" />
+    <Image Include="assets\textures\dirt.png" />
+    <Image Include="assets\textures\grass.png" />
+    <Image Include="assets\textures\player.png" />
+    <Image Include="assets\textures\player_idle.png" />
+    <Image Include="assets\textures\player_walk.png" />
+    <Image Include="assets\textures\water.png" />
+    <Image Include="assets\textures\wierderguy.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

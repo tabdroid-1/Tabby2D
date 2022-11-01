@@ -36,6 +36,12 @@
     <ClCompile Include="Src\include\Vector2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Src\include\Collision.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\include\ECS\ECS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\include\Game.h">
@@ -62,16 +68,19 @@
     <ClInclude Include="Src\include\ECS\Transform.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Src\include\KeyListener.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\include\Input.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\include\ECS\KeyListenerComp.h">
+    <ClInclude Include="Src\include\ECS\KeyListener.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Src\include\ECS\RigidBody.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\include\Collision.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\include\ECS\Collider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\include\ECS\Tile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -80,21 +89,28 @@
     <None Include="zlib1.dll" />
     <None Include="libpng16-16.dll" />
     <None Include="SDL2_image.dll" />
+    <None Include="assets\levels\levelTest.level" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="assets\player.png">
+    <Image Include="assets\textures\player.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="assets\dirt.png">
+    <Image Include="assets\textures\dirt.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="assets\grass.png">
+    <Image Include="assets\textures\grass.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="assets\water.png">
+    <Image Include="assets\textures\water.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="assets\wierderguy.png">
+    <Image Include="assets\textures\wierderguy.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\textures\player_walk.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\textures\player_idle.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

@@ -1,10 +1,8 @@
 #pragma once
-#include "Game.h"
-#pragma once
+#include "Components.h"
+#include "../Game.h"
 
-#include "Game.h"
-
-class KeyListener {
+class KeyListener : public Component {
 
 public:
 
@@ -14,16 +12,16 @@ public:
 
 	bool getKeyDown(SDL_Scancode key) {
 
-		if (Game::event.key.repeat = 0 && state[key]) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		
+		
 	}
 
+	void update() override {
+		
+	}
 
 private:
 
+	Uint8* output;
 	const Uint8* state = SDL_GetKeyboardState(nullptr);
 };
