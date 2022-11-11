@@ -83,6 +83,9 @@
     <ClInclude Include="Src\include\ECS\Tile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Src\include\ECS\Animation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="SDL2.dll" />
@@ -90,20 +93,9 @@
     <None Include="libpng16-16.dll" />
     <None Include="SDL2_image.dll" />
     <None Include="assets\levels\levelTest.level" />
+    <None Include="assets\levels\levelTest2.level" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="assets\textures\player.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="assets\textures\dirt.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="assets\textures\grass.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="assets\textures\water.png">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="assets\textures\wierderguy.png">
       <Filter>Resource Files</Filter>
     </Image>
@@ -111,6 +103,18 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="assets\textures\player_idle.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\textures\test256x512.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\textures\highrestest.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\textures\player_anims.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\textures\terrain_ss.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

@@ -9,6 +9,8 @@ Map* level;
 SDL_Renderer* Game::renderer = nullptr;
 SDL_Event Game::event;
 
+SDL_Rect Game::camera = { 0, 0, 800, 640 };
+
 KeyListener Input;
 
 Manager manager;
@@ -17,6 +19,8 @@ std::vector<Collider*> Game::colliders;
 
 auto& inputComp(manager.addEntity());
 auto& player(manager.addEntity());
+
+const char* mapFile = "assets/textures/terrain_ss.png";
 
 enum groupLabels : std::size_t {
 
@@ -55,18 +59,16 @@ void Game::init(const char* title, int width, int height, bool fullscreen)
 
 	level = new Map();
 
-	level->LoadMap("assets/levels/levelTest.level", 16, 16);
+	level->LoadMap("assets/levels/levelTest2.level", 25, 20);
 
 	inputComp.addComponent<KeyListener>();
 	Input = inputComp.getComponent<KeyListener>();
 
-	player.addComponent<Transform>(Vector2(2, 2));
-	player.addComponent<Sprite>("assets/textures/player_idle.png", 2, 200);
+	player.addComponent<Transform>(Vector2(4, 4));
+	player.addComponent<Sprite>("assets/textures/player_anims.png", true);
 	player.addComponent<RigidBody>();
 	player.addComponent<Collider>("player");
 	player.addGroup(gPlayers);
-
-
 	player.getComponent<RigidBody>().friction = 1;
 
 }
@@ -93,24 +95,36 @@ void Game::update() {
 	manager.update();
 
 	if (Input.getKey(SDL_SCANCODE_D)) {
-		std::cout << "Right :3" << std::endl;
+
 		player.getComponent<RigidBody>().velocity.x = 5;
+		player.getComponent<Sprite>().Play("Walk");
+		player.getComponent<Sprite>().spriteFlip = SDL_FLIP_NONE;
 	}
 
 	if (Input.getKey(SDL_SCANCODE_A)) {
-		std::cout << "Left :3" << std::endl;
+
 		player.getComponent<RigidBody>().velocity.x = -5;
+		player.getComponent<Sprite>().Play("Walk");
+		player.getComponent<Sprite>().spriteFlip = SDL_FLIP_HORIZONTAL;
 	}
 
 	if (Input.getKey(SDL_SCANCODE_W)) {
-		std::cout << "Forward :3" << std::endl;
+
 		player.getComponent<RigidBody>().velocity.y = 5;
+		player.getComponent<Sprite>().Play("Walk");
 	}
 
 	if (Input.getKey(SDL_SCANCODE_S)) {
-		std::cout << "Backwards :3" << std::endl;
+
 		player.getComponent<RigidBody>().velocity.y = -5;
+		player.getComponent<Sprite>().Play("Walk");
 	}
+
+	if (!Input.getKey(SDL_SCANCODE_S) && !Input.getKey(SDL_SCANCODE_A) && !Input.getKey(SDL_SCANCODE_D) && !Input.getKey(SDL_SCANCODE_W)) {
+
+		player.getComponent<Sprite>().Play("Idle");
+	}
+
 
 	for (auto cc : colliders) {
 		
@@ -150,9 +164,9 @@ void Game::clean()
 	SDL_Quit();
 }
 
-void Game::AddTile(int id, int x, int y) {
+void Game::AddTile(int srcX, int srcY, int xPos, int yPos) {
 
 	auto& tile(manager.addEntity());
-	tile.addComponent<Tile>(x, y, 32, 32, id);
+	tile.addComponent<Tile>(srcX, srcY, xPos, yPos, mapFile);
 	tile.addGroup(gMap);
 }

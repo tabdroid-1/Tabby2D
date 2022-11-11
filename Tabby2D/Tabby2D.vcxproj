@@ -162,6 +162,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\include\Collision.h" />
+    <ClInclude Include="Src\include\ECS\Animation.h" />
     <ClInclude Include="Src\include\ECS\Collider.h" />
     <ClInclude Include="Src\include\ECS\Components.h" />
     <ClInclude Include="Src\include\ECS\ECS.h" />
@@ -177,18 +178,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\levels\levelTest.level" />
+    <None Include="assets\levels\levelTest2.level" />
     <None Include="libpng16-16.dll" />
     <None Include="SDL2.dll" />
     <None Include="SDL2_image.dll" />
     <None Include="zlib1.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="assets\textures\dirt.png" />
-    <Image Include="assets\textures\grass.png" />
-    <Image Include="assets\textures\player.png" />
+    <Image Include="assets\textures\highrestest.png" />
+    <Image Include="assets\textures\player_anims.png" />
     <Image Include="assets\textures\player_idle.png" />
     <Image Include="assets\textures\player_walk.png" />
-    <Image Include="assets\textures\water.png" />
+    <Image Include="assets\textures\terrain_ss.png" />
+    <Image Include="assets\textures\test256x512.png" />
     <Image Include="assets\textures\wierderguy.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

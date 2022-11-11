@@ -21,10 +21,11 @@ public:
 	void render();
 	void clean();
 
-	static void AddTile(int id, int x, int y);
+	static void AddTile(int srcX, int srcY, int xPos, int yPos);
 	static SDL_Renderer* renderer;
 	static SDL_Event event;
 	static std::vector<Collider*> colliders;
+	static SDL_Rect camera;
 private:
 	bool isRunning = false;
 	int cnt = 0;
